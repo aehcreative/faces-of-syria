@@ -8,6 +8,9 @@ body {
     background: #373D40;
 }
 
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
 .container {
     width: 100%;
     max-width: 1400px;
@@ -29,14 +32,51 @@ body {
     background-position: center;
 }
 
-.photo .hashtag {
+.hashtag {
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     text-transform: uppercase;
     color: #fff;
     font-size: 50px;
     font-weight: 600;
+    width: calc(100% - 350px);
+    text-align: center;
 }
+
+.hashtag span {
+    color: #f2c610;
+}
+
+.pagination {
+    position: absolute;
+    width: calc(100% - 350px);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.prev, .next {
+    position: absolute;
+    bottom: 40px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    padding: 10px 15px;
+}
+
+.prev {
+    left: 40px
+}
+
+.photo:hover .pagination {
+    opacity: 1;
+}
+
+.next {
+    right: 40px;
+}
+
 
 .info {
     float: left;
@@ -135,12 +175,17 @@ body {
     text-transform: uppercase;
 }
 
-.donate span {
+.donate a {
     display: block;
     margin: 15px 0;
     font-size: 13px;
     color: #777777;
 }
+
+.donate a:hover {
+    color: #f2c610;
+}
+
 
 .photo-credit {
     margin: 0 40px 30px 0;
